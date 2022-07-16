@@ -16,7 +16,7 @@ const config = {
 		}),
 		paths: {
 			// YOUR github repository name
-			base: '/sveltekit-maplibre-boilerplate'
+			base: process.env.NODE_ENV === 'production' ? '/sveltekit-maplibre-boilerplate' : ''
 		},
 		prerender: {
 			default: true
