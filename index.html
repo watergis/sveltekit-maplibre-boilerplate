@@ -2,27 +2,38 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="description" content="" />
 		<link rel="icon" href="/sveltekit-maplibre-boilerplate/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="stylesheet" href="/sveltekit-maplibre-boilerplate/_app/assets/pages/index.svelte-f34fd846.css">
-	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/start-12e213ec.js">
-	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/chunks/index-90a356c8.js">
-	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/layout.svelte-0afd6b22.js">
-	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/pages/index.svelte-9e7440fc.js">
+	<link rel="stylesheet" href="/sveltekit-maplibre-boilerplate/_app/immutable/assets/index-8af512fd.css">
+	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/immutable/start-7cc3f51b.js">
+	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/immutable/chunks/index-822bf9f9.js">
+	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/immutable/layout.svelte-908a71d6.js">
+	<link rel="modulepreload" href="/sveltekit-maplibre-boilerplate/_app/immutable/pages/index.svelte-a871aeed.js">
 	</head>
+	<style type="text/css">
+		html,
+		body {
+			margin: 0;
+		}
+
+		html {
+			overflow-y: hidden !important;
+		}
+	</style>
 	<body>
 		<div>
 
 
+<sveltekit:head><title>Sveltekit Maplibre boilerplate</title></sveltekit:head>
+
 <div><div class="map svelte-dis1da" id="map"></div></div>
 
 
-		<script type="module" data-hydrate="7dy81i">
-		import { start } from "/sveltekit-maplibre-boilerplate/_app/start-12e213ec.js";
+		<script type="module" data-sveltekit-hydrate="17nwlr6">
+		import { start } from "/sveltekit-maplibre-boilerplate/_app/immutable/start-7cc3f51b.js";
 		start({
-			target: document.querySelector('[data-hydrate="7dy81i"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="17nwlr6"]').parentNode,
 			paths: {"base":"/sveltekit-maplibre-boilerplate","assets":"/sveltekit-maplibre-boilerplate"},
 			session: {},
 			route: true,
@@ -31,10 +42,7 @@
 			hydrate: {
 				status: 200,
 				error: null,
-				nodes: [
-					import("/sveltekit-maplibre-boilerplate/_app/layout.svelte-0afd6b22.js"),
-						import("/sveltekit-maplibre-boilerplate/_app/pages/index.svelte-9e7440fc.js")
-				],
+				nodes: [0, 2],
 				params: {},
 				routeId: ""
 			}
