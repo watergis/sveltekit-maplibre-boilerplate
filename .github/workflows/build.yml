@@ -32,6 +32,9 @@ jobs:
           npm run lint
           npm run format
           npm run build
+      - name: test
+        run: |
+          npm test
       - name: deploy
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
