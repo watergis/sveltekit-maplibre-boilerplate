@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Map from '../components/Map.svelte';
+	import Map from '$lib/components/Map.svelte';
 
 	const title = 'Sveltekit Maplibre boilerplate';
 </script>

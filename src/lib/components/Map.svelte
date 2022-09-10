@@ -7,7 +7,7 @@
 		ScaleControl,
 		AttributionControl
 	} from 'maplibre-gl';
-	import { map } from '../stores';
+	import { map } from '$lib/stores';
 	const VITE_MAPTILER_KEY = import.meta.env.VITE_MAPTILER_KEY;
 
 	// let map: Map;
