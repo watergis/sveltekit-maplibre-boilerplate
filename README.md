@@ -1,5 +1,7 @@
 # svelte-maplibre-boilerplate
 
+This is a simple and smart boilerplate to integrate maplibre project by using sveltekit.
+
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
 ## Creating a project
@@ -34,7 +36,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-open [http://localhost:3000/sveltekit-maplibre-boilerplate](http://localhost:3000/sveltekit-maplibre-boilerplate).
+open [http://localhost:5173/sveltekit-maplibre-boilerplate](http://localhost:5173/sveltekit-maplibre-boilerplate).
 
 The path of URL can be changed at [svelte.config.js](./svelte.config.js).
 
