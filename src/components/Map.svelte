@@ -7,13 +7,14 @@
 		ScaleControl,
 		AttributionControl
 	} from 'maplibre-gl';
+	import { map } from '../stores';
 	const VITE_MAPTILER_KEY = import.meta.env.VITE_MAPTILER_KEY;
 
-	let map: Map;
+	// let map: Map;
 	let mapContainer: HTMLDivElement;
 
 	onMount(async () => {
-		map = new Map({
+		const _map = new Map({
 			container: mapContainer,
 			style: `https://api.maptiler.com/maps/streets/style.json?key=${VITE_MAPTILER_KEY}`,
 			center: [37.138, 0.414],
@@ -21,16 +22,18 @@
 			hash: true,
 			attributionControl: false
 		});
-		map.addControl(new NavigationControl({}), 'top-right');
-		map.addControl(
+		_map.addControl(new NavigationControl({}), 'top-right');
+		_map.addControl(
 			new GeolocateControl({
 				positionOptions: { enableHighAccuracy: true },
 				trackUserLocation: true
 			}),
 			'top-right'
 		);
-		map.addControl(new ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
-		map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
+		_map.addControl(new ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
+		_map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
+
+		map.update(() => _map);
 	});
 </script>
 
