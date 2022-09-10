@@ -8,15 +8,14 @@
 		AttributionControl
 	} from 'maplibre-gl';
 	import { map } from '$lib/stores';
-	const VITE_MAPTILER_KEY = import.meta.env.VITE_MAPTILER_KEY;
+	import { variables } from '$lib/variables';
 
-	// let map: Map;
 	let mapContainer: HTMLDivElement;
 
 	onMount(async () => {
 		const _map = new Map({
 			container: mapContainer,
-			style: `https://api.maptiler.com/maps/streets/style.json?key=${VITE_MAPTILER_KEY}`,
+			style: `https://api.maptiler.com/maps/streets/style.json?key=${variables.VITE_MAPTILER_KEY}`,
 			center: [37.138, 0.414],
 			zoom: 6,
 			hash: true,
