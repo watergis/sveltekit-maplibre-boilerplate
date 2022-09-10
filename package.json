@@ -6,7 +6,7 @@
 		"build": "rm -rf build && vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync && husky install",
+		"prepare": "husky install",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
@@ -14,26 +14,26 @@
 		"deploy": "npx gh-pages -d build -t true"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "next",
-		"@sveltejs/kit": "next",
-		"@typescript-eslint/eslint-plugin": "^5.32.0",
-		"@typescript-eslint/parser": "^5.32.0",
-		"eslint": "^8.21.0",
+		"@sveltejs/adapter-static": "^1.0.0-next.42",
+		"@sveltejs/kit": "^1.0.0-next.480",
+		"@typescript-eslint/eslint-plugin": "^5.36.2",
+		"@typescript-eslint/parser": "^5.36.2",
+		"eslint": "^8.23.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"gh-pages": "^4.0.0",
 		"husky": "^8.0.1",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.49.0",
-		"svelte-check": "^2.8.0",
+		"svelte": "^3.50.1",
+		"svelte-check": "^2.9.0",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
-		"typescript": "^4.7.4",
-		"vite": "^3.0.4"
+		"typescript": "^4.8.3",
+		"vite": "^3.1.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"maplibre-gl": "^2.1.9"
+		"maplibre-gl": "^2.4.0"
 	}
 }
