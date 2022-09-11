@@ -36,12 +36,6 @@ jobs:
           npm run build
       - name: test
         run: npm test
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
       - name: deploy
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
