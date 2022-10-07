@@ -1,0 +1,23 @@
+# EXAMPLE USAGE
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+#
+pre-push:
+  parallel: true
+  commands:
+    build:
+      tags: build
+      run: npm run build
+    test:
+      tags: test
+      run: npm test
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      tags: lint
+      run: npm lint
+    format:
+      tags: prettier
+      run: npm run format
