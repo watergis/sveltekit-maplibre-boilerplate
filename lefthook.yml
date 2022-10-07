@@ -6,17 +6,17 @@ pre-push:
   commands:
     build:
       tags: build
-      run: npm run build
+      run: pnpm build
     test:
       tags: test
-      run: npm test
+      run: pnpm test
 
 pre-commit:
   parallel: true
   commands:
     lint:
       tags: lint
-      run: npm lint
+      run: pnpm lint
     format:
       tags: prettier
-      run: npm run format
+      run: pnpm format
