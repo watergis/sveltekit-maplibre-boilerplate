@@ -18,24 +18,46 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      # pnpm setup
+      # refer to https://github.com/pnpm/action-setup
+      - name: pnpm setup
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+          run_install: false
       - name: Use Nodejs
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
+          cache: 'pnpm'
+      - name: Get pnpm store directory
+        id: pnpm-cache
         run: |
-          npm ci
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # install dependencies
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: lint, format & build
         run: |
-          npm run lint
-          npm run format
-          npm run build
+          pnpm lint
+          pnpm format
+          pnpm build
       - name: test
-        run: npm test
+        run: pnpm test
       - name: deploy
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
@@ -43,8 +65,8 @@ jobs:
           VITE_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
         run: |
           echo "VITE_MAPTILER_KEY=${VITE_MAPTILER_KEY}" > .env
-          npm run build
+          pnpm build
           git config --global user.name "watergis+githubci"
           git config --global user.email "watergis+githubci@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${NODE_AUTH_TOKEN}@github.com/watergis/sveltekit-maplibre-boilerplate.git
-          npm run deploy
+          pnpm deploy

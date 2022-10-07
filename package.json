@@ -11,7 +11,8 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
-		"deploy": "npx gh-pages -d build -t true"
+		"deploy": "npx gh-pages -d build -t true",
+		"preinstall": "npx only-allow pnpm"
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.7",
