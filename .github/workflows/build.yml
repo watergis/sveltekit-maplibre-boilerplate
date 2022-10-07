@@ -52,21 +52,17 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: lint, format & build
+        VITE_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
         run: |
+          echo "VITE_MAPTILER_KEY=${VITE_MAPTILER_KEY}" > .env
           pnpm lint
           pnpm format
           pnpm build
       - name: test
         run: pnpm test
-      - name: deploy
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         if: ${{ github.ref == 'refs/heads/main' }}
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          VITE_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
-        run: |
-          echo "VITE_MAPTILER_KEY=${VITE_MAPTILER_KEY}" > .env
-          pnpm build
-          git config --global user.name "watergis+githubci"
-          git config --global user.email "watergis+githubci@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${NODE_AUTH_TOKEN}@github.com/watergis/sveltekit-maplibre-boilerplate.git
-          pnpm deploy
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
