@@ -23,7 +23,7 @@ cp .env.example
 vi .env
 ```
 
-Add your own API key `VITE_MAPTILER_KEY` for maptiler. The key can be created at maptiler website [here](https://cloud.maptiler.com/account/keys/). You probably need to sign up first.
+Add your own API key `PUBLIC_MAPTILER_KEY` for maptiler. The key can be created at maptiler website [here](https://cloud.maptiler.com/account/keys/). You probably need to sign up first.
 
 ## Developing
 

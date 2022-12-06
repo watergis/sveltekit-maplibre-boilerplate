@@ -53,9 +53,9 @@ jobs:
         run: npx playwright install --with-deps
       - name: lint, format & build
         env:
-          VITE_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
+          PUBLIC_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
         run: |
-          echo "VITE_MAPTILER_KEY=${VITE_MAPTILER_KEY}" > .env
+          echo "PUBLIC_MAPTILER_KEY=${PUBLIC_MAPTILER_KEY}" > .env
           pnpm lint
           pnpm format
           pnpm build
