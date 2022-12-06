@@ -11,10 +11,10 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
+		"prepare": "lefthook install",
 		"preinstall": "npx only-allow pnpm"
 	},
 	"devDependencies": {
-		"@arkweid/lefthook": "^0.7.7",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
@@ -23,7 +23,6 @@
 		"eslint": "^8.29.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"maplibre-gl": "^2.4.0",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"rimraf": "^3.0.2",
@@ -34,5 +33,9 @@
 		"typescript": "^4.9.3",
 		"vite": "^3.2.5"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@arkweid/lefthook": "^0.7.7",
+		"maplibre-gl": "^2.4.0"
+	}
 }
