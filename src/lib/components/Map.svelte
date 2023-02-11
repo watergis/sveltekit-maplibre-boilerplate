@@ -11,8 +11,6 @@
 
 	let mapContainer: HTMLDivElement;
 
-	let isInitialised: Promise<boolean>;
-
 	/**
 	 * Initialise Maplibre Map object
 	 */
@@ -47,7 +45,7 @@
 	};
 
 	$: if (mapContainer) {
-		isInitialised = init();
+		init();
 	}
 </script>
 
