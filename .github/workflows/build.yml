@@ -26,7 +26,7 @@ jobs:
           version: 7
           run_install: false
       - name: Use Nodejs
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
