@@ -21,7 +21,7 @@ jobs:
       # pnpm setup
       # refer to https://github.com/pnpm/action-setup
       - name: pnpm setup
-        uses: pnpm/action-setup@v2.2.2
+        uses: pnpm/action-setup@v2.2.4
         with:
           version: 7
           run_install: false
@@ -62,7 +62,7 @@ jobs:
       - name: test
         run: pnpm test
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.7
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           branch: gh-pages # The branch the action should deploy to.
