@@ -38,7 +38,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-open [http://localhost:5173/sveltekit-maplibre-boilerplate](http://localhost:5173/sveltekit-maplibre-boilerplate).
+open [http://localhost:5173](http://localhost:5173).
 
 The path of URL can be changed at [svelte.config.js](./svelte.config.js).
 
