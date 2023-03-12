@@ -11,8 +11,6 @@ on:
 env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
-  # we call `pnpm playwright install` instead
-  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
 
 jobs:
   build:
@@ -53,6 +51,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-      - run: pnpm playwright install --with-deps
+      - run: npx playwright install --with-deps
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
