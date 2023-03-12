@@ -11,6 +11,7 @@ on:
 env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
+  PUBLIC_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
 
 jobs:
   build:
@@ -19,9 +20,6 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-
-    env:
-      PUBLIC_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
 
     steps:
       - uses: actions/checkout@v3
