@@ -47,26 +47,26 @@ jobs:
           pnpm build
 
 test:
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
+  strategy:
+    matrix:
+      node-version: [18.x]
 
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2.2.4
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
+  steps:
+    - uses: actions/checkout@v3
+    - uses: pnpm/action-setup@v2.2.4
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: pnpm
 
-      - name: Install Playwright Browsers
-        run: pnpm playwright install --with-deps
+    - name: Install Playwright Browsers
+      run: pnpm playwright install --with-deps
 
-      # install dependencies
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: test
-        run: pnpm test
+    # install dependencies
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+    - name: test
+      run: pnpm test
