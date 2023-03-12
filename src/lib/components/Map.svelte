@@ -36,11 +36,6 @@
 			_map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
 			map.set(_map);
-
-			_map.once('load', () => {
-				// make sure maplibre map object is loaded
-				resolve(true);
-			});
 		});
 	};
 
@@ -49,7 +44,7 @@
 	}
 </script>
 
-<div class="map" id="map" bind:this={mapContainer} />
+<div class="map" data-testid="map" bind:this={mapContainer} />
 
 <style>
 	@import 'maplibre-gl/dist/maplibre-gl.css';
