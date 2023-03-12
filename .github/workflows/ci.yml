@@ -41,10 +41,9 @@ jobs:
         run: |
           echo "PUBLIC_MAPTILER_KEY=${PUBLIC_MAPTILER_KEY}" > .env
       - run: pnpm lint
-      - run: pnpm check
       - run: pnpm format
-      - name: build
-        run: pnpm build
+      - run: pnpm build
+      - run: pnpm check
   test:
     runs-on: ubuntu-latest
 
