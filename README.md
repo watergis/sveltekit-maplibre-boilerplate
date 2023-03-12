@@ -52,4 +52,3 @@ In this repository, it uses Netlify to build and deploy demo website.
 ## License
 
 [MIT License](./LICENSE)
-
