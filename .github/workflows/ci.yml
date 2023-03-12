@@ -25,17 +25,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.2.4
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-
-      # install dependencies
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm check
       - run: pnpm format
@@ -45,28 +39,20 @@ jobs:
         run: |
           echo "PUBLIC_MAPTILER_KEY=${PUBLIC_MAPTILER_KEY}" > .env
           pnpm build
+  test:
+    runs-on: ubuntu-latest
 
-test:
-  runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
 
-  strategy:
-    matrix:
-      node-version: [18.x]
-
-  steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2.2.4
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: pnpm
-
-    - name: Install Playwright Browsers
-      run: pnpm playwright install --with-deps
-
-    # install dependencies
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile
-    - name: test
-      run: pnpm test
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - run: pnpm playwright install --with-deps
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
