@@ -49,7 +49,7 @@
 	}
 </script>
 
-<div class="map" id="map" bind:this={mapContainer} />
+<div class="map" data-testid="map" bind:this={mapContainer} />
 
 <style>
 	@import 'maplibre-gl/dist/maplibre-gl.css';

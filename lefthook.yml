@@ -7,7 +7,9 @@ pre-push:
     build:
       run: pnpm build
     test:
-      run: pnpm test
+      run: |
+        pnpm test:vitest
+        pnpm test:playwright
 
 pre-commit:
   parallel: true
