@@ -36,11 +36,6 @@
 			_map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
 			map.set(_map);
-
-			_map.once('load', () => {
-				// make sure maplibre map object is loaded
-				resolve(true);
-			});
 		});
 	};
 
