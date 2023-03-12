@@ -12,7 +12,8 @@ pre-push:
 pre-commit:
   parallel: true
   commands:
-    lint:
-      run: pnpm lint
-    format:
-      run: pnpm format
+    precommit:
+      run: |
+        pnpm lint
+        pnpm format
+        pnpm check
