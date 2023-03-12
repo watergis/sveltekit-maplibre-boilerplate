@@ -13,6 +13,14 @@ env:
   PNPM_CACHE_FOLDER: .pnpm-store
   PUBLIC_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
 
+# cancel in-progress runs on new commits to same PR (gitub.event.number)
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
 jobs:
   build:
     runs-on: ubuntu-latest
