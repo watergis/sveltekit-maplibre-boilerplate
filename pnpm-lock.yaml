@@ -51,8 +51,8 @@ devDependencies:
   prettier-plugin-svelte: 2.9.0_gan2xfhhcbz3kbkivttwsjndea
   rimraf: 4.4.0
   svelte: 3.56.0
-  svelte-check: 3.1.2_iuf6ge3i2u5pjx5ryymamki2ou
-  svelte-preprocess: 5.0.1_355fpwi47xvl6zskuf7nvvznvm
+  svelte-check: 3.1.2_svelte@3.56.0
+  svelte-preprocess: 5.0.1_rx3ssngbibhj4vpczagsdyy47u
   tslib: 2.5.0
   typescript: 4.9.5
   vite: 4.1.4
@@ -3305,7 +3305,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/3.1.2_iuf6ge3i2u5pjx5ryymamki2ou:
+  /svelte-check/3.1.2_svelte@3.56.0:
     resolution: {integrity: sha512-8nIPXPe8TiUiWPCAoegU+l1NaL5DKLnN6+H1dJqbjkD6IkhpDTMj2q8Z88lhCOsq1F3E7st5/Vn7eGeGkSo/aA==}
     hasBin: true
     peerDependencies:
@@ -3318,7 +3318,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.56.0
-      svelte-preprocess: 5.0.1_355fpwi47xvl6zskuf7nvvznvm
+      svelte-preprocess: 5.0.1_rx3ssngbibhj4vpczagsdyy47u
       typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -3341,7 +3341,7 @@ packages:
       svelte: 3.56.0
     dev: true
 
-  /svelte-preprocess/5.0.1_355fpwi47xvl6zskuf7nvvznvm:
+  /svelte-preprocess/5.0.1_rx3ssngbibhj4vpczagsdyy47u:
     resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -3379,7 +3379,6 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@babel/core': 7.21.0
       '@types/pug': 2.0.6
       '@types/sass': 1.45.0
       detect-indent: 6.1.0
