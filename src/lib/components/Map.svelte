@@ -15,7 +15,7 @@
 	 * Initialise Maplibre Map object
 	 */
 	const init = () => {
-		return new Promise<boolean>((resolve) => {
+		return new Promise<boolean>(() => {
 			const _map = new Map({
 				container: mapContainer,
 				style: `https://api.maptiler.com/maps/streets/style.json?key=${PUBLIC_MAPTILER_KEY}`,
