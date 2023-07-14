@@ -33,7 +33,7 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"jest-dom": "^4.0.0",
 		"jsdom": "^22.0.0",
-		"prettier": "^2.8.8",
+		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^2.10.0",
 		"rimraf": "^5.0.1",
 		"svelte": "^3.59.1",
