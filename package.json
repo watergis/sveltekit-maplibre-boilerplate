@@ -45,7 +45,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"maplibre-gl": "^3.2.1"
+		"maplibre-gl": "^4.0.0"
 	},
 	"packageManager": "pnpm@8.15.1",
 	"engines": {
