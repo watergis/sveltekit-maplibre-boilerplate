@@ -23,7 +23,7 @@
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.22.3",
-		"@testing-library/jest-dom": "^5.17.0",
+		"@testing-library/jest-dom": "^6.0.0",
 		"@testing-library/svelte": "^4.0.3",
 		"@typescript-eslint/eslint-plugin": "^6.2.0",
 		"@typescript-eslint/parser": "^6.2.0",
