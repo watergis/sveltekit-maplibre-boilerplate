@@ -47,7 +47,7 @@
 	"dependencies": {
 		"maplibre-gl": "^3.2.1"
 	},
-	"packageManager": "pnpm@8.15.1",
+	"packageManager": "pnpm@8.15.2",
 	"engines": {
 		"pnpm": "^8.0.0"
 	}
