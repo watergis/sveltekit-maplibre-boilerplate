@@ -14,10 +14,7 @@
 
 	let mapContainer: HTMLDivElement;
 
-	/**
-	 * Initialise Maplibre Map object
-	 */
-	const initialize_map = () => {
+	onMount(() => {
 		const map = new Map({
 			container: mapContainer,
 			style: `https://api.maptiler.com/maps/streets/style.json?key=${PUBLIC_MAPTILER_KEY}`,
@@ -38,10 +35,6 @@
 		map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
 		mapStore?.set(map);
-	};
-
-	onMount(() => {
-		initialize_map();
 	});
 </script>
 
