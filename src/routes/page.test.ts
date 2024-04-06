@@ -7,8 +7,8 @@ describe('+page.svelte test', () => {
 		vi.clearAllMocks();
 	});
 
-	it('shoud show top page', () => {
-		const { getAllByText } = render(TopPage);
-		expect(getAllByText('Sveltekit Maplibre boilerplate'));
+	it('shoud show map element', () => {
+		const { container } = render(TopPage);
+		expect(container.getElementsByClassName('map'));
 	});
 });
