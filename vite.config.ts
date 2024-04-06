@@ -6,9 +6,11 @@ export default defineConfig({
 	build: {
 		chunkSizeWarningLimit: 1000
 	},
+	ssr: {
+		noExternal: ['maplibre-gl']
+	},
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}'],
-		threads: false,
 		globals: true,
 		environment: 'jsdom',
 		setupFiles: ['./src/setupTest.ts'],
