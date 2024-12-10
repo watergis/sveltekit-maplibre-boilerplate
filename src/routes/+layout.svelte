@@ -1,10 +1,15 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	let title = $page.data.title;
-	let site_name = $page.data.site_name;
-	let site_description = $page.data.site_description;
+	let { children }: Props = $props();
+
+	let title = $state($page.data.title);
+	let site_name = $state($page.data.site_name);
+	let site_description = $state($page.data.site_description);
 	let socialImage = {
 		image: '/favicon.png',
 		width: '200',
@@ -50,4 +55,4 @@
 	</style>
 </svelte:head>
 
-<slot />
+{@render children?.()}
