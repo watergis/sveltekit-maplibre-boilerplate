@@ -1,5 +1,5 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit()],
@@ -8,15 +8,5 @@ export default defineConfig({
 	},
 	ssr: {
 		noExternal: ['maplibre-gl']
-	},
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}'],
-		globals: true,
-		environment: 'jsdom',
-		setupFiles: ['./src/setupTest.ts'],
-		coverage: {
-			provider: 'istanbul',
-			reporter: ['text', 'json', 'html']
-		}
 	}
 });

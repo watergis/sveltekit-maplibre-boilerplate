@@ -8,37 +8,40 @@
 		NavigationControl,
 		ScaleControl
 	} from 'maplibre-gl';
-	import { getContext, onMount } from 'svelte';
+	import { getContext, untrack } from 'svelte';
 
 	let mapStore: MapStore = getContext(MAPSTORE_CONTEXT_KEY);
 
-	let mapContainer: HTMLDivElement;
+	let mapContainer: HTMLDivElement | undefined = $state();
 
-	onMount(() => {
-		const map = new Map({
-			container: mapContainer,
-			style: `https://api.maptiler.com/maps/streets/style.json?key=${PUBLIC_MAPTILER_KEY}`,
-			center: [37.138, 0.414],
-			zoom: 6,
-			hash: true,
-			attributionControl: false
-		});
-		map.addControl(new NavigationControl({}), 'top-right');
-		map.addControl(
-			new GeolocateControl({
-				positionOptions: { enableHighAccuracy: true },
-				trackUserLocation: true
-			}),
-			'top-right'
-		);
-		map.addControl(new ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
-		map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
+	$effect(() =>
+		untrack(() => {
+			if (!mapContainer) return;
+			const map = new Map({
+				container: mapContainer,
+				style: `https://api.maptiler.com/maps/streets/style.json?key=${PUBLIC_MAPTILER_KEY}`,
+				center: [37.138, 0.414],
+				zoom: 6,
+				hash: true,
+				attributionControl: false
+			});
+			map.addControl(new NavigationControl({}), 'top-right');
+			map.addControl(
+				new GeolocateControl({
+					positionOptions: { enableHighAccuracy: true },
+					trackUserLocation: true
+				}),
+				'top-right'
+			);
+			map.addControl(new ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
+			map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
-		mapStore?.set(map);
-	});
+			mapStore?.set(map);
+		})
+	);
 </script>
 
-<div class="map" data-testid="map" bind:this={mapContainer} />
+<div class="map" data-testid="map" bind:this={mapContainer}></div>
 
 <style>
 	@import 'maplibre-gl/dist/maplibre-gl.css';
