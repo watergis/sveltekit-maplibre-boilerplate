@@ -20,6 +20,7 @@ vi.mock('maplibre-gl', () => {
 		GeolocateControl: vi.fn(),
 		NavigationControl: vi.fn(),
 		ScaleControl: vi.fn(),
-		AttributionControl: vi.fn()
+		AttributionControl: vi.fn(),
+		GlobeControl: vi.fn()
 	};
 });

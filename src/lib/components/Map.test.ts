@@ -38,4 +38,10 @@ describe('Map.svelte test', () => {
 		expect(container.getElementsByClassName('maplibregl-control-container')).toBeTruthy();
 		expect(container.getElementsByClassName('maplibregl-ctrl-attrib')).toBeTruthy();
 	});
+
+	it('should add maplibre globe control', () => {
+		const { container } = render(Map);
+		expect(container.getElementsByClassName('maplibregl-control-container')).toBeTruthy();
+		expect(container.getElementsByClassName('maplibregl-ctrl-globe')).toBeTruthy();
+	});
 });
