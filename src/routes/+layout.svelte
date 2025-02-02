@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
 	let { children }: Props = $props();
 
-	let title = $state($page.data.title);
-	let site_name = $state($page.data.site_name);
-	let site_description = $state($page.data.site_description);
+	let title = $state(page.data.title);
+	let site_name = $state(page.data.site_name);
+	let site_description = $state(page.data.site_description);
 	let socialImage = {
 		image: '/favicon.png',
 		width: '200',
@@ -17,9 +17,9 @@
 	};
 
 	afterNavigate(() => {
-		title = $page.data.title;
-		site_name = $page.data.site_name;
-		site_description = $page.data.site_description;
+		title = page.data.title;
+		site_name = page.data.site_name;
+		site_description = page.data.site_description;
 	});
 </script>
 

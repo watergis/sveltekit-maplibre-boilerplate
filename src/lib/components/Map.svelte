@@ -4,6 +4,7 @@
 	import {
 		AttributionControl,
 		GeolocateControl,
+		GlobeControl,
 		Map,
 		NavigationControl,
 		ScaleControl
@@ -26,6 +27,7 @@
 				attributionControl: false
 			});
 			map.addControl(new NavigationControl({}), 'top-right');
+			map.addControl(new GlobeControl(), 'top-right');
 			map.addControl(
 				new GeolocateControl({
 					positionOptions: { enableHighAccuracy: true },
