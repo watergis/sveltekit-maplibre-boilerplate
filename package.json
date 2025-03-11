@@ -50,7 +50,7 @@
 	"dependencies": {
 		"maplibre-gl": "^5.1.0"
 	},
-	"packageManager": "pnpm@9.15.7",
+	"packageManager": "pnpm@9.15.8",
 	"engines": {
 		"pnpm": "^9.0.0"
 	}
