@@ -1,7 +1,6 @@
 # svelte-maplibre-boilerplate
 
 ![license](https://img.shields.io/github/license/watergis/sveltekit-maplibre-boilerplate)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/be68de24-2ebe-48ef-bc7a-a5f27544f551/deploy-status)](https://app.netlify.com/sites/sveltekit-maplibre-boilerplace/deploys)
 [![CI](https://github.com/watergis/sveltekit-maplibre-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/watergis/sveltekit-maplibre-boilerplate/actions/workflows/ci.yml)
 
 This is a simple and smart boilerplate to integrate maplibre project by using sveltekit.
