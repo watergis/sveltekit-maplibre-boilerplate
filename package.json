@@ -18,6 +18,7 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.33.0",
 		"@playwright/test": "^1.54.2",
 		"@sveltejs/adapter-auto": "^6.1.0",
 		"@sveltejs/adapter-static": "^3.0.9",
